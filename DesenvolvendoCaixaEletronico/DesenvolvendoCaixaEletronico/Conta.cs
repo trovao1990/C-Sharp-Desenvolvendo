@@ -8,8 +8,20 @@ namespace DesenvolvendoCaixaEletronico
 {
     class Conta
     {
+ 
         public Cliente Titular { get; set; }
         public int Numero { get; set; }
-        public double Saldo { get; set; }
+        public double Saldo { get;  protected set; }
+
+        public void Saca(double valorSaque)
+        {
+            this.Saldo -= valorSaque;
+        }
+
+        public void Deposita(double valorDeposito)
+        {
+            this.Saldo += valorDeposito;
+        }
+        
     }
 }
